@@ -137,6 +137,7 @@ A valid data snippet looks like:
     "whereNext": "Example further opportunities."
 }
 ```
+
 ## Presentation Data
 
 The value for the Presentations property must be an array of one or more JSON objects describing an offering or presentation of a Course, that is the details of a Course that may vary when it is offered in different locations or times. 
@@ -168,6 +169,7 @@ The following properties are Conditional, that is, they must be used where appro
 ### Sample
 
 A valid data snippet looks like:
+
 ```
 {
     "id": "11111111-aaaa-1111-1111-1a1a1a1a1a1a",
@@ -253,6 +255,7 @@ A valid data snippet looks like:
     "subjectWebpage": "https://example.edu/",
     "offers": ["001"]
 }
+```
 
 ## Qualification Data
 
@@ -308,6 +311,7 @@ A valid data snippet looks like:
         }
     ]
 }
+```
 
 ## Location Data
 Information about locations, including addresses, can be provided either directly as object values for properties or linked by reference to an object in the Locations array. If they are in the Locations array they will automatically be assigned the RDF type of ceterms:Place, if they are provided as object values for properties this type must be added explicitly using the property: value pair "type": "Place".
