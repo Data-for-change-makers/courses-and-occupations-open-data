@@ -1,0 +1,82 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "dfcm-schema.json",
+    "description": "Draft schema for validating dfcm course descriptions with no extensions.",
+    "type": "object",
+    "required": [
+        "@context",
+        "data"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "enum": [
+                "../JsonSchema/top-schema.json"
+            ]
+        },
+        "@context": {
+            "description": "Two context URIs are required.",
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": {
+                "enum": [
+                    "https://pjjk.net/context/dfcm-context.json",
+                    "https://pjjk.net/context/dfcm-quals.json"
+                ]
+            }
+        },
+        "id": {
+            "$ref": "common-schema.json"
+        },
+        "data": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Providers": {
+                    "type": "array",
+                    "description": "An array of objects describing educational providers.",
+                    "items": {
+                        "$ref": "provider-schema.json"
+                    }
+                },
+                "Courses": {
+                    "type": "array",
+                    "description": "An array of objects describing educational courses.",
+                    "items": {
+                        "$ref": "course-schema.json"
+                    }
+                },
+                "Qualifications": {
+                    "type": "array",
+                    "description": "An array of objects describing qualifications.",
+                    "items": {
+                        "$ref": "qualification-schema.json"
+                    }
+                },
+                "Presentations": {
+                    "type": "array",
+                    "description": "An array of objects describing course offerings / presentations.",
+                    "items": {
+                        "$ref": "presentation-schema.json"
+                    }
+                },
+                "Locations": {
+                    "type": "array",
+                    "description": "An array of objects describing places where things are located.",
+                    "items": {
+                        "$ref": "location-schema.json"
+                    }
+                },
+                "AwardingBodies": {
+                    "type": "array",
+                    "description": "An array of objects describing qualifcation awarding bodies.",
+                    "items": {
+                        "$ref": "awarding-body-schema.json"
+                    }
+                }
+            }
+        }
+    }
+}
