@@ -273,7 +273,7 @@ The objects in the Qualification data array are validated using the qualificatio
 - **industryType** – An array of objects describing industries for which the which the qualification is relevant, each object must have values of `type` as "CredentialAlignmentObject", `alignmentType` as "Industry",  and `framework` as "UKSIC2007"; the value of the `codedNotation` property must be the SIC code, and the value of the `targetNodeName` property may be the label used by SIC for the industry.
 - **occupationType** –  An array of objects describing occupations for which the which the qualification is relevant, each object must have values of `type` as "CredentialAlignmentObject", `alignmentType` as "Occupation",  `framework` as "UKSOC2020", and `frameworkName`: "UK SOC 2020"; the value of the `codedNotation` property must be the SOC code of the occupation, and the value of the `targetNodeName` property may be the label used by SOC for the occupation.
 
-## Sample
+### Sample
 
 A valid data snippet looks like:
 
@@ -334,7 +334,7 @@ The following properties are optional:
 - **postalCode** –a string, the postal code for the location.
 - **addressCountry** – a string, the country of the location.
 
-## Sample
+### Sample
 
 A valid data snippet looks like:
 
