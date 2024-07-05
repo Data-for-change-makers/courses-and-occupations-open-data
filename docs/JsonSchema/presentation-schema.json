@@ -1,0 +1,219 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "presentation-schema.json",
+    "description": "Draft schema for validating presentation descriptions with no extensions.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "id",
+        "scheduleTimingType",
+        "scheduleFrequencyType",
+        "estimatedCost",
+        "deliveryType",
+        "identifier",
+        "start",
+        "end",
+        "estimatedDuration",
+        "offerFrequencyType",
+        "learningMethodDescription",
+        "nationalDeliveryIndicator",
+        "maximumAttendeeCapacity",
+        "placesTaken",
+        "regionServed",
+        "availableAt"
+    ],
+    "properties": {
+        "id": {
+            "$ref": "common-schema.json#id"
+        },
+        "scheduleTimingType": {
+            "type": "object",
+            "required": [
+                "targetNode"
+            ],
+            "properties": {
+                "targetNode": {
+                    "type": "string",
+                    "enum": [
+                        "Weekdays",
+                        "Weekend",
+                        "Daytime",
+                        "Evening",
+                        "Day-BlockRelease"
+                    ]
+                }
+            }
+        },
+        "scheduleFrequencyType": {
+            "type": "object",
+            "required": [
+                "targetNode"
+            ],
+            "properties": {
+                "targetNode": {
+                    "enum": [
+                        "SelfPaced",
+                        "Irregular",
+                        "MultiplePerWeek",
+                        "Weekly"
+                    ]
+                }
+            }
+        },
+        "estimatedCost": {
+            "type": "object",
+            "required": [
+                "type",
+                "currency",
+                "price",
+                "description"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "const": "CostProfile"
+                },
+                "cost": {
+                    "type": "integer"
+                },
+                "currency": {
+                    "type": "string",
+                    "const": "GBP"
+                },
+                "description": {
+                    "$ref": "common-schema.json#descriptive-text"
+                }
+            }
+        },
+        "deliveryType": {
+            "type": "object",
+            "required": [
+                "targetNode"
+            ],
+            "properties": {
+                "targetNode": {
+                    "enum": [
+                        "ClassRoom",
+                        "Online",
+                        "WorkBased"
+                    ]
+                },
+                "targetNodeDescription": {
+                    "$ref": "common-schema.json#descriptive-text"
+                }
+            }
+        },
+        "identifier": {
+            "$ref": "#courserunID"
+        },
+        "start": {
+            "$ref": "common-schema.json#date"
+        },
+        "end": {
+            "$ref": "common-schema.json#date"
+        },
+        "estimatedDuration": {
+            "$ref": "#duration"
+        },
+        "offerFrequencyType": {
+            "type": "object",
+            "required": [
+                "targetNode"
+            ],
+            "properties": {
+                "targetNode": {
+                    "type": "string",
+                    "enum": [
+                        "Annually",
+                        "SemiAnnually",
+                        "Monthly",
+                        "Quarterly",
+                        "OnDemand",
+                        "Irregular"
+                    ]
+                }
+            }
+        },
+        "learningMethodDescription": {
+            "$ref": "common-schema.json#descriptive-text"
+        },
+        "nationalDeliveryIndicator": {
+            "type": "boolean"
+        },
+        "maximumAttendeeCapacity": {
+            "type": "integer"
+        },
+        "placesTaken": {
+            "type": "integer"
+        },
+        "regionServed": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "addressRegion"
+                ],
+                "properties": {
+                    "addressRegion": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "availableAt": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "$ref": "location-schema.json"
+                }
+            ]
+        }
+    },
+    "$defs": {
+        "courserunID": {
+            "$anchor": "courserunID",
+            "type": "object",
+            "required": [
+                "type",
+                "identifierTypeName",
+                "identifierValueCode"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "const": "IdentifierValue"
+                },
+                "identifierTypeName": {
+                    "type": "string",
+                    "enum": [
+                        "ESFA_COURSE_RUN_ID",
+                        "OTHER_GUID"
+                    ]
+                },
+                "identifierValueCode": {
+                    "$ref": "common-schema.json#guid"
+                }
+            }
+        },
+        "duration": {
+            "$anchor": "duration",
+            "type": "object",
+            "required": [
+                "type",
+                "duration"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "const": "DurationProfile"
+                },
+                "duration": {
+                    "$ref": "common-schema.json#duration"
+                }
+            }
+        }
+    }
+}

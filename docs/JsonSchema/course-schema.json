@@ -1,0 +1,167 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "course-schema.json",
+    "description": "Draft schema for validating course descriptions with no extensions.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "name",
+        "id",
+        "description",
+        "assessmentMethodDescription",
+        "audience",
+        "entryCondition",
+        "equipmentRequired",
+        "codedNotation",
+        "isPreparationFor",
+        "identifier",
+        "hasOffering",
+        "subject",
+        "subjectWebpage",
+        "teaches",
+        "whereNext"
+    ],
+    "properties": {
+        "id": {
+            "$ref": "common-schema.json#id"
+        },
+        "name": {
+            "$ref": "common-schema.json#name"
+        },
+        "description": {
+            "$ref": "common-schema.json#descriptive-text"
+        },
+        "assessmentMethodDescription": {
+            "$ref": "common-schema.json#descriptive-text"
+        },
+        "audience": {
+            "type": "object",
+            "required": [
+                "type",
+                "description"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "const": "EducationalAudience"
+                },
+                "description": {
+                    "$ref": "common-schema.json#descriptive-text"
+                }
+            }
+        },
+        "entryCondition": {
+            "type": "object",
+            "required": [
+                "type",
+                "description"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "const": "ConditionProfile"
+                },
+                "description": {
+                    "$ref": "common-schema.json#descriptive-text"
+                }
+            }
+        },
+        "equipmentRequired": {
+            "$ref": "common-schema.json#descriptive-text"
+        },
+        "codedNotation": {
+            "type": "string"
+        },
+        "identifier": {
+            "type": "object",
+            "$ref": "#courseID"
+        },
+        "isPreparationFor": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "hasOffering": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "subject": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "type",
+                    "notation",
+                    "prefLabel",
+                    "inScheme"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "Concept"
+                    },
+                    "inScheme": {
+                        "type": "string",
+                        "const": "SSA"
+                    },
+                    "notation": {
+                        "type": "string"
+                    },
+                    "prefLabel": {
+                        "$ref": "common-schema.json#name"
+                    }
+                }
+            }
+        },
+        "subjectWebpage": {
+            "$ref": "common-schema.json#http-uri"
+        },
+        "teaches": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "competencyText"
+                ],
+                "properties": {
+                    "competencyText": {
+                        "$ref": "common-schema.json#descriptive-text"
+                    }
+                }
+            }
+        },
+        "whereNext": {
+            "$ref": "common-schema.json#descriptive-text"
+        }
+    },
+    "$defs": {
+        "courseID": {
+            "$anchor": "courseID",
+            "type": "object",
+            "required": [
+                "type",
+                "identifierTypeName",
+                "identifierValueCode"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "const": "IdentifierValue"
+                },
+                "identifierTypeName": {
+                    "type": "string",
+                    "enum": [
+                        "ESFA_COURSE_ID",
+                        "OTHER_GUID"
+                    ]
+                },
+                "identifierValueCode": {
+                    "$ref": "common-schema.json#guid"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "provider-schema.json",
+    "description": "Draft schema for validating provider descriptions with no extensions.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "name",
+        "identifier",
+        "id",
+        "address",
+        "offers"
+    ],
+    "properties": {
+        "id": {
+            "$ref": "common-schema.json#id"
+        },
+        "name": {
+            "$ref": "common-schema.json#name"
+        },
+        "identifier": {
+            "$ref": "#prn-schema"
+        },
+        "type": {
+            "$ref": "common-schema.json#http-uri"
+        },
+        "address": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "$ref": "location-schema.json"
+                }
+            ]
+        },
+        "offers": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "subjectWebpage": {
+            "$ref": "common-schema.json#http-uri"
+        }
+    },
+    "$defs": {
+        "prn-identifier": {
+            "$anchor": "prn-schema",
+            "type": "object",
+            "required": [
+                "type",
+                "identifierTypeName",
+                "identifierValueCode"
+            ],
+            "properties": {
+                "type": {
+                    "const": "IdentifierValue"
+                },
+                "identifierTypeName": {
+                    "const": "UKPRN"
+                },
+                "identifierValueCode": {
+                    "type": "string",
+                    "minLength": 8,
+                    "maxLength": 8
+                }
+            }
+        }
+    }
+}
