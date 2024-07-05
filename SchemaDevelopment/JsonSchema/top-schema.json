@@ -12,7 +12,8 @@
         "$schema": {
             "type": "string",
             "enum": [
-                "../JsonSchema/top-schema.json"
+                "../JsonSchema/top-schema.json",
+                "https://data-for-change-makers.github.io/courses-and-occupations-open-data/JsonSchema/top-schema.json"
             ]
         },
         "@context": {

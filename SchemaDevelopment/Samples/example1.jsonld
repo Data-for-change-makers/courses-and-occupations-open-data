@@ -1,5 +1,5 @@
 {
-    "$schema": "../JsonSchema/top-schema.json",
+    "$schema": "https://data-for-change-makers.github.io/courses-and-occupations-open-data/JsonSchema/top-schema.json",
     "@context": [
         "https://data-for-change-makers.github.io/courses-and-occupations-open-data/context.json",
         "https://data-for-change-makers.github.io/courses-and-occupations-open-data/context-quals.json"
