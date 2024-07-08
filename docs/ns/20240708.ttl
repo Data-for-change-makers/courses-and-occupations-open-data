@@ -1,0 +1,41 @@
+@prefix cmco: <https://example.org/dfcm/terms/> . 
+         # Data for Change Makers Courses and Occupations 
+@prefix ceterms:	<https://purl.org/ctdl/terms/> . 
+         # Credential Transparency Description Language
+@prefix sdo:	<https://schema.org/> . # Schema Dot Org
+@prefix skos: <http://www.w3.org/2004/02/skos/core> . 
+         # Simple Knowledge Organization System
+
+@prefix dc:     <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+
+cmco: a owl:Ontology ;
+    dc:title "Data for Change Makers Courses and Occupations RDF Definitions" ;
+    dc:description "Classes and properties used to describe Courses, qualifications and their relationship to occupations. The terms described here are UK specific and are not mapped to any in the imported ontologies" ;
+    owl:imports ceterms: , sdo: , skos: ; # these may not import correctly
+    rdfs:isDefinedBy <https://example.org/dfcm/terms> ;
+    
+.
+
+cmco:equipmentRequired a rdf:Property ;
+    rdfs:comment "What the learner will need to access or bring to the course." ;
+    dc:source "ESFA" ; #to do: find specific document
+.
+
+cmco:nationalDeliveryIndicator a rdf:Property ;
+    rdfs:comment "You can deliver the course anywhere in England and you will be shown as a national provider for this course." ;
+    dc:source "ESFA" ; #to do: find specific document
+.
+
+cmco:placesTaken a rdf:Property ;
+    rdfs:comment "The number of enrolments." ;
+.
+
+cmco:whereNext a rdf:Property ;
+    rdfs:comment "The further opportunities a learner can expect after successfully completing the course." ;
+    dc:source "ESFA" ; #to do: find specific document
+.

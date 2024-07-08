@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dc1="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="https://example.org/dfcm/terms/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ontology"/>
+    <dc1:title>Data for Change Makers Courses and Occupations RDF Definitions</dc1:title>
+    <dc1:description>Classes and properties used to describe Courses, qualifications and their relationship to occupations. The terms described here are UK specific and are not mapped to any in the imported ontologies</dc1:description>
+    <owl:imports rdf:resource="https://purl.org/ctdl/terms/"/>
+    <owl:imports rdf:resource="https://schema.org/"/>
+    <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+    <rdfs:isDefinedBy rdf:resource="https://example.org/dfcm/terms"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/dfcm/terms/equipmentRequired">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment>What the learner will need to access or bring to the course.</rdfs:comment>
+    <dc1:source>ESFA</dc1:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/dfcm/terms/placesTaken">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment>The number of enrolments.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/dfcm/terms/whereNext">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment>The further opportunities a learner can expect after successfully completing the course.</rdfs:comment>
+    <dc1:source>ESFA</dc1:source>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/dfcm/terms/nationalDeliveryIndicator">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:comment>You can deliver the course anywhere in England and you will be shown as a national provider for this course.</rdfs:comment>
+    <dc1:source>ESFA</dc1:source>
+  </rdf:Description>
+</rdf:RDF>
