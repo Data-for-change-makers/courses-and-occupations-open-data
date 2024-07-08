@@ -3,8 +3,8 @@
         "@version": 1.1,
         "@language": "en",
         "ceterms": "https://purl.org/ctdl/terms/",
-        "dfcm": "https://example.org/dfcm/terms/",
-        "dfcm-schemes": "http://example.org/dfcm-schemes/",
+        "cmco": "https://example.org/dfcm/terms/",
+        "cmco-schemes": "http://example.org/cmco-schemes/",
         "sdo": "https://schema.org/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "id": "@id",
@@ -13,7 +13,7 @@
             "@type": "@id"
         },
         "data": {
-            "@id": "dfcm:data",
+            "@id": "cmco:data",
             "@container": "@type"
         },
         "Courses": {
@@ -110,7 +110,7 @@
             "@id": "ceterms:deliveryType",
             "@type": "@id",
             "@context": {
-                "@base": "http://example.org/dfcm-schemes/delivery#"
+                "@base": "http://example.org/cmco-schemes/delivery#"
             }
         },
         "description": {
@@ -121,7 +121,7 @@
             "@id": "sdo:educationalLevel",
             "@type": "@id",
             "@context": {
-                "@base": "http://example.org/dfcm-schemes/levels#"
+                "@base": "http://example.org/cmco-schemes/levels#"
             }
         },
         "end": {
@@ -133,7 +133,7 @@
             "@type": "@id"
         },
         "equipmentRequired": {
-            "@id": "dfcm:equipmentRequired",
+            "@id": "cmco:equipmentRequired",
             "@container": "@language"
         },
         "estimatedCost": {
@@ -195,7 +195,7 @@
             "@container": "@language"
         },
         "nationalDeliveryIndicator": {
-            "@id": "dfcm:nationalDeliveryIndicator"
+            "@id": "cmco:nationalDeliveryIndicator"
         },
         "occupationType": {
             "@id": "ceterms:occupationType",
@@ -223,7 +223,7 @@
             }
         },
         "placesTaken": {
-            "@id": "dfcm:placesTaken",
+            "@id": "cmco:placesTaken",
             "@type": "xsd:integer"
         },
         "postalCode": {
@@ -266,7 +266,7 @@
             "@context": {
                 "skos": "http://www.w3.org/2004/02/skos/core#",
                 "Concept": "skos:Concept",
-                "@base": "http://example.org/dfcm-schemes/subject#",
+                "@base": "http://example.org/cmco-schemes/subject#",
                 "inScheme": {
                     "@id": "skos:inScheme",
                     "@type": "@id"
@@ -297,7 +297,7 @@
             }
         },
         "whereNext": {
-            "@id": "dfcm:whereNext",
+            "@id": "cmco:whereNext",
             "@container": "@language"
         },
         "alignmentType": {
@@ -324,7 +324,7 @@
             "@id": "ceterms:framework",
             "@type": "@id",
             "@context": {
-                "@base": "http://example.org/dfcm-schemes/frameworks#"
+                "@base": "http://example.org/cmco-schemes/frameworks#"
             }
         },
         "frameworkName": {

@@ -38,7 +38,7 @@ Each term from an RDF vocabulary is identified with an IRI, and as a shorthand a
 | ceterms: | https://purl.org/ctdl/terms/ |CTDL |
 | sdo: | https://schema.org/ | Schema.Org| 
 | skos: | http://www.w3.org/2004/02/skos/core# | Simple Knowledge Organization System
-| dfcm: | https://example.org/dfcm/terms/  |Data for change makers(*) |
+| cmco: | https://example.org/dfcm/terms/  |Data for change makers(*) |
 
 (* dfcm is a placeholder for the vocabulary created where no term in CTDL or Schema.Org could be found.)
 
@@ -79,14 +79,14 @@ The `type` and `id` properties are not generally shown mapped to rdf in the tabl
 | assessmentMethod | The ways a learner will be assessed. [ESFA] | [assessmentMethodDescription](https://purl.org/ctdl/terms/assessmentMethodDescription) |
 | audience | Information that will help the learner decide whether this course is suitable for them, the learning experience and opportunities they can expect from the course. [ESFA] | [sdo:audience](http://schema.org/audience) |
 | entryRequirement | Specific skills, licences, vocational or academic requirements. [ESFA] | [entryCondition](https://purl.org/ctdl/terms/entryCondition)→ [ConditionProfile](https://purl.org/ctdl/terms/ConditionProfile) – description |
-| equipmentRequired | What the learner will need to access or bring to the course. [ESFA] | dfcm:equipmentRequired |
+| equipmentRequired | What the learner will need to access or bring to the course. [ESFA] | cmco:equipmentRequired |
 | localCode | Identifier of the course used by the provider [based on schema.org] | [codedNotation](https://purl.org/ctdl/terms/codedNotation) |
 | preparationFor | Qualification for which this course is preparation | [isPreparationFor](https://purl.org/ctdl/terms/isPreparationFor) |
 | presentedAs | Presentation of this course. | [hasOffering](https://purl.org/ctdl/terms/hasOffering) |
 | subjectArea | Topic of the course [XCRI] | [subject](https://purl.org/ctdl/terms/subject)→ [skos:Concept](http://www.w3.org/2004/02/skos/core#Concept) – [skos:prefLabel](http://www.w3.org/2004/02/skos/core#prefLabel) |
 | teaches | The main topics, units or modules of the course a learner can expect, include key features. [ESFA] | [teaches](https://purl.org/ctdl/terms/teaches) |
 | webPage | The webpage for this course. | [subjectWebpage](https://purl.org/ctdl/terms/subjectWebpage) |
-| whereNext | The further opportunities a learner can expect after successfully completing the course. [ESFA] | dfcm:whereNext
+| whereNext | The further opportunities a learner can expect after successfully completing the course. [ESFA] | cmco:whereNext
 
 ### Presentation
 
@@ -106,10 +106,10 @@ The `type` and `id` properties are not generally shown mapped to rdf in the tabl
 | duration | The number of days, weeks, months or years the course runs for. [ESFA] |[estimatedDuration](https://purl.org/ctdl/terms/estimatedDuration) → [DurationProfile](https://purl.org/ctdl/terms/DurationProfile) – [exactDuration](https://purl.org/ctdl/terms/exactDuration) |
 | flexibleStartIndicator | Indicates whether there is a flexible start date. | [offerFrequencyType](https://purl.org/ctdl/terms/offerFrequencyType) → [ScheduleFrequency](https://purl.org/ctdl/terms/ScheduleFrequency) with value "OnDemand" |
 | learningMethod | The methods used to deliver the course. [ESFA] | [learningMethodDescription](https://purl.org/ctdl/terms/learningMethodDescription) |
-| nationalDeliveryIndicator | You can deliver the course anywhere in England and you will be shown as a national provider for this course. [ESFA] | dfcm:nationalDeliveryIndicator |
+| nationalDeliveryIndicator | You can deliver the course anywhere in England and you will be shown as a national provider for this course. [ESFA] | cmco:nationalDeliveryIndicator |
 | offeredAt | A location where a course is presented. [XCRI]| [availableAt](https://purl.org/ctdl/terms/availableAt) |
 | placesAvailable | A textual description of the number of places available for participants in the presentation. MAY be a simple integer. [XCRI] | [sdo:maximumAttendeeCapacity](http://schema.org/maximumAttendeeCapacity) (MUST be a simple integer) |
-| placesTaken  | The number of enrolments. | dfcm:placesTaken |
+| placesTaken  | The number of enrolments. | cmco:placesTaken |
 | regionServed | All the areas where you can deliver the course [ESFA] | [region](https://purl.org/ctdl/terms/region)  → [Place](https://purl.org/ctdl/terms/Place) → [addressRegion](https://purl.org/ctdl/terms/addressRegion)
 | start | The date at which a presentation begins. [XCRI] | [sdo:startDate](http://schema.org/startDate) |
 | studyMode | The expected mode of attendance or study. | [audienceType](https://purl.org/ctdl/terms/audienceType) |
